@@ -13,6 +13,7 @@
 		1B8227091C2824A400ECFA8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8227071C2824A400ECFA8D /* Main.storyboard */; };
 		1B82270B1C2824A400ECFA8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B82270A1C2824A400ECFA8D /* Assets.xcassets */; };
 		1B82270E1C2824A400ECFA8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B82270C1C2824A400ECFA8D /* LaunchScreen.storyboard */; };
+		C33797E4AC18CADACB3892E9 /* libPods-JFMasonry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D1171F9EC706F422CD56E6 /* libPods-JFMasonry.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		1B82270A1C2824A400ECFA8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B82270D1C2824A400ECFA8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B82270F1C2824A400ECFA8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F75803B0710807398718B2 /* Pods-JFMasonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMasonry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JFMasonry/Pods-JFMasonry.debug.xcconfig"; sourceTree = "<group>"; };
+		AC8E95C3754E04A2224D4F22 /* Pods-JFMasonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMasonry.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFMasonry/Pods-JFMasonry.release.xcconfig"; sourceTree = "<group>"; };
+		F5D1171F9EC706F422CD56E6 /* libPods-JFMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFMasonry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33797E4AC18CADACB3892E9 /* libPods-JFMasonry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				1B8226FD1C2824A400ECFA8D /* JFMasonry */,
 				1B8226FC1C2824A400ECFA8D /* Products */,
+				BF1505FBBD3734BC639C4091 /* Pods */,
+				BD727CCBEAC5DB1FF44C07E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BD727CCBEAC5DB1FF44C07E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5D1171F9EC706F422CD56E6 /* libPods-JFMasonry.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF1505FBBD3734BC639C4091 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72F75803B0710807398718B2 /* Pods-JFMasonry.debug.xcconfig */,
+				AC8E95C3754E04A2224D4F22 /* Pods-JFMasonry.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B8227121C2824A400ECFA8D /* Build configuration list for PBXNativeTarget "JFMasonry" */;
 			buildPhases = (
+				1E61F493CA4225BFF0524214 /* Check Pods Manifest.lock */,
 				1B8226F71C2824A400ECFA8D /* Sources */,
 				1B8226F81C2824A400ECFA8D /* Frameworks */,
 				1B8226F91C2824A400ECFA8D /* Resources */,
+				DD11190F6401B0CD6E2D6611 /* Embed Pods Frameworks */,
+				5A812519D0D82C3FDDDD344A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,6 +132,7 @@
 		1B8226F31C2824A400ECFA8D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JF;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = john;
 				TargetAttributes = {
@@ -144,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E61F493CA4225BFF0524214 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A812519D0D82C3FDDDD344A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JFMasonry/Pods-JFMasonry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD11190F6401B0CD6E2D6611 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JFMasonry/Pods-JFMasonry-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1B8226F71C2824A400ECFA8D /* Sources */ = {
@@ -260,9 +336,11 @@
 		};
 		1B8227131C2824A400ECFA8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72F75803B0710807398718B2 /* Pods-JFMasonry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JFMasonry/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.john.JFMasonry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,9 +349,11 @@
 		};
 		1B8227141C2824A400ECFA8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC8E95C3754E04A2224D4F22 /* Pods-JFMasonry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JFMasonry/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.john.JFMasonry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +379,7 @@
 				1B8227141C2824A400ECFA8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
